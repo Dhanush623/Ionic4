@@ -20,6 +20,13 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
+
+      // this line make Status Bar Overlay
+      this.statusBar.overlaysWebView(true);
+
+      // this line change the color of Status Bar
+      this.statusBar.backgroundColorByHexString('#3880ff');
+
       this.splashScreen.hide();
     });
   }
