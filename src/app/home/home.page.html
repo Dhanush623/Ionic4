@@ -26,6 +26,10 @@
 	</ion-card>
 
 	<!-- fab button and route to Secound Page -->
-	<ion-fab-button (click)='goto()'>Fab Button</ion-fab-button>
+	<ion-fab (click)='goto()' vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button >
+			<ion-icon name="add"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
 
 </ion-content>
