@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController, AlertController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { ToastController, AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
-	constructor(public toastController: ToastController, public alertController: AlertController){
+	constructor(public toastController: ToastController, public alertController: AlertController, private router: Router, private route: ActivatedRoute,){
 		// calling toast function
 		this.presentToast();
+	}
+
+	goto() {
+		this.router.navigate(['demo-page']);
 	}
 
 	async presentAlertConfirm() {
