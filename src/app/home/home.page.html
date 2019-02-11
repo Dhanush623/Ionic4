@@ -7,7 +7,25 @@
 </ion-header>
 
 <ion-content padding>
+
+	<!-- this button show Alert Box -->
   <ion-button color="dark" expand="block" shape="round" (click)='presentAlertConfirm()'>Show Alert
   	<ion-icon slot="end" name="alert"></ion-icon>
   </ion-button>
+
+  	<!-- card -->
+  	<ion-card (click)='presentToast()'>
+	  <ion-card-header>Card Header
+	    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+	    <ion-card-title>Card Title</ion-card-title>
+	  </ion-card-header>
+
+	  <ion-card-content>
+	    This is Example for card with Header, Subtitle and Title. When you click this one it show Toast
+	  </ion-card-content>
+	</ion-card>
+
+	<!-- fab button -->
+	<ion-fab-button>Fab Button</ion-fab-button>
+
 </ion-content>
