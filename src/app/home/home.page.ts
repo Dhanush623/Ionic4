@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastController, AlertController } from '@ionic/angular';
+import { ToastController, AlertController, ActionSheetController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HomePage {
 
-	constructor(public toastController: ToastController, public alertController: AlertController, private router: Router, private route: ActivatedRoute,){
+	constructor(public toastController: ToastController, public actionSheetController: ActionSheetController, public alertController: AlertController, private router: Router, private route: ActivatedRoute,){
 		// calling toast function
 		this.presentToast();
 	}
@@ -18,10 +18,37 @@ export class HomePage {
 		this.router.navigate(['demo-page']);
 	}
 
+	async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Action Sheet Title',
+      buttons: [{
+        text: 'Button',
+        icon: 'heart',
+        handler: () => {
+          console.log('Button clicked');
+        }
+      }, {
+        text: 'Button 1',
+        icon: 'arrow-dropright-circle',
+        handler: () => {
+          console.log('Button 1 clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+
 	async presentAlertConfirm() {
 	    const alert = await this.alertController.create({
 	      header: 'Alert Header!',
-	      message: 'This is sample for <strong>ALert</strong> Box!!!',
+	      message: 'This is sample for <strong>Alert</strong> Box!!!',
 	      buttons: [
 	        {
 	          text: 'Cancel',
