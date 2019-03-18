@@ -71,6 +71,44 @@
 	  <ion-icon name="close-circle"></ion-icon>
 	</ion-chip>
 
+	<!-- date with icon -->
+	<ion-item>
+		<ion-icon name="calendar"></ion-icon>
+	  <ion-label>Date</ion-label>
+	  <ion-datetime display-format="MMM DD, YYYY HH:mm" placeholder='MMM/DD/YYYY, HH:MM'></ion-datetime>
+	</ion-item>
+
+	<!-- item with one select option -->
+	<ion-item>
+	    <ion-label position="floating">Select One Option</ion-label>
+	    <ion-select>
+	      <ion-select-option value="one">One</ion-select-option>
+	      <ion-select-option value="two">Two</ion-select-option>
+	    </ion-select>
+	  </ion-item>
+
+	  <!-- item with multiple select option -->
+	<ion-item>
+	    <ion-label position="floating">Select Option</ion-label>
+	    <ion-select multiple='true'>
+	      <ion-select-option value="one">One</ion-select-option>
+	      <ion-select-option value="two">Two</ion-select-option>
+	      <ion-select-option value="three">Three</ion-select-option>
+	    </ion-select>
+	  </ion-item>
+
+	  <!-- item with Toggle Option -->
+	  <ion-item>
+	    <ion-label>Toggle</ion-label>
+	    <ion-toggle slot="end"></ion-toggle>
+	  </ion-item>
+
+	  <!-- item with input --> 
+	  <ion-item>
+	    <ion-label position="floating">Floating Input</ion-label>
+	    <ion-input placeholder='Enter your Input'></ion-input>
+	  </ion-item>
+
 	<!-- fab button and route to Secound Page -->
 	<ion-fab (click)='goto()' vertical="bottom" horizontal="end" slot="fixed">
 		<ion-fab-button >
